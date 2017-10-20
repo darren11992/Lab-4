@@ -273,7 +273,8 @@ def main():
         while sentry == False:
             direction = menu(exits)   #CONTINUE HERE
             sentry= (is_valid_exit(exits, direction))
-            print("Thats not a valid input, heres everything again:\n")#== False:
+            if sentry == False:
+                print("Thats not a valid input, heres everything again:\n")#== False:
 
         # Move the protagonist, i.e. update the current room
         current_room = move(exits, direction)
